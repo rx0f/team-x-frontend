@@ -1,39 +1,54 @@
 import React from "react";
-import Button from "./Button";
+import Button from "../../components/checkoutPage/Button"
 
 export default function Checkout() {
   const tests = [
     {
+      id: 1,
       img: "/assets/checkout/1.svg",
       title: "Blood Pressure",
       details: "Test your blood pressure",
-      button: <Button content="Upload file" icon="/assets/checkout/4.svg"/>,
+      button: <Button content="Upload file" icon="/assets/checkout/4.svg" />
     },
     {
+      id: 2,
       img: "/assets/checkout/2.svg",
       title: "Symptoms",
       details: "Check your symptoms",
-      button: <Button content="Fill form" icon="/assets/checkout/5.svg"/>,
+      button: <Button content="Fill form" icon="/assets/checkout/5.svg" />
     },
     {
+      id: 3,
       img: "/assets/checkout/3.svg",
       title: "Diabet",
       details: "Check your diabet",
-      button: <Button content="Upload file" icon="/assets/checkout/4.svg"/>,
+      button: <Button content="Upload file" icon="/assets/checkout/4.svg" />
+    },
+    {
+      id: 4,
+      img: "/assets/checkout/6.svg",
+      title: "Eye measurements",
+      details: "Measure your eyes for glasses",
+      button: <Button content="Upload file" icon="/assets/checkout/4.svg" />
     },
   ];
 
   return (
     <div>
       <div className="flex flex-col items-center my-12 gap-y-2 lg:gap-y-4 font-semibold">
-        <h1 className="uppercase text-dark-blue-one text-4xl lg:text-6xl">Checkout</h1>
+        <h1 className="uppercase text-dark-blue-one text-4xl lg:text-6xl">
+          Checkout
+        </h1>
         <div className="text-36 lg:w-64 h-1.5 rounded-full bg-dark-orange" />
       </div>
       <div className="flex flex-wrap">
         {tests.map((test) => {
           return (
-            <div className="mx-auto my-4 rounded-xl drop-shadow-md h-72 w-72 bg-white opacity-90 flex flex-col items-center justify-evenly">
-              <img src={test.img} alt="" />
+            <div
+              key={test.id}
+              className="mx-auto my-4 rounded-xl drop-shadow-md h-72 w-72 bg-white opacity-90 flex flex-col items-center justify-evenly"
+            >
+              <img className="h-28 w-auto" src={test.img} alt="" />
               <div className="flex flex-col items-center gap-y-2">
                 <h3>{test.title}</h3>
                 <p>{test.details}</p>
