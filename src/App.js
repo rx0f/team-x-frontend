@@ -13,6 +13,7 @@ export default function App() {
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/login" element={<Login/>}/>
           <Route path="/signup-patient" element={<SignupPatient/>}/>
+          <Route path="/signup-patient" element={<SignupPatient/>}/>
         </Route>
       </Routes>
     </BrowserRouter>

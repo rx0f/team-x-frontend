@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "../../components/checkoutPage/Button"
+import AlertDialog from "../../components/shared/pop-up";
 
 export default function Checkout() {
   const tests = [
@@ -15,7 +16,7 @@ export default function Checkout() {
       img: "/assets/checkout/2.svg",
       title: "Symptoms",
       details: "Check your symptoms",
-      button: <Button content="Fill form" icon="/assets/checkout/5.svg" />
+      button: <AlertDialog />
     },
     {
       id: 3,
