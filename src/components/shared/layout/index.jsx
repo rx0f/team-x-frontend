@@ -13,8 +13,12 @@ export default function Layout() {
         </div>
       </div>
       <div className="relative">
-        <Navbar />
-        <Outlet />
+        <div className="relative">
+          <Navbar />
+        </div>
+        <div className="relative">
+          <Outlet />
+        </div>
       </div>
     </div>
   );

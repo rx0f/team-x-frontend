@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Button({ content, icon, func }) {
+export default function Button({ icon, func }) {
   return (
     <button
       className="w-36 rounded-xl bg-dark-blue-one text-white py-1"
@@ -9,8 +9,8 @@ export default function Button({ content, icon, func }) {
       }}
     >
       <div className="flex justify-around">
-        {content}
-        <img src={icon} alt="" />
+        Feeling sick ?
+        <img src="/assets/checkout/5.svg" alt="" />
       </div>
     </button>
   );

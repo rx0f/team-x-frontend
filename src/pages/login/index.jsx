@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { RiFacebookCircleFill } from "react-icons/ri";
 import { AiFillTwitterCircle, AiFillGooglePlusCircle } from "react-icons/ai";
+import axios from "axios";
 
 export default function Login() {
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+
   return (
     <div className="lg:h-[90vh] flex flex-col lg:flex-row items-center justify-around">
+      <img src="/assets/shared/logo.svg" alt="" />
       <div className="w-72 md:w-[32rem] lg:h-[32rem] rounded-xl drop-shadow-md bg-white flex flex-col gap-y-8 items-center p-4">
         <div className="flex flex-col items-center gap-y-2">
           <h3 className="uppercase text-dark-blue-one text-3xl lg:text-5xl font-semibold">
@@ -21,6 +26,9 @@ export default function Login() {
               type="email"
               placeholder="Email adress"
               className="px-2 w-full bg-light-blue-one outline-none"
+              onChange={({ currentTarget: input }) => {
+                setEmail(input.value);
+              }}
             />
           </div>
 
@@ -30,6 +38,9 @@ export default function Login() {
               type="password"
               placeholder="Password"
               className="px-2 w-full bg-light-blue-one outline-none"
+              onChange={({ currentTarget: input }) => {
+                setPassword(input.value);
+              }}
             />
           </div>
 
@@ -38,7 +49,9 @@ export default function Login() {
           </button>
 
           <div className="flex flex-col items-center gap-y-2">
-            <button className="bg-dark-blue-one text-white text-xl py-1 w-full rounded-full">
+            <button className="bg-dark-blue-one text-white text-xl py-1 w-full rounded-full" onClick={async () => {
+              const {data: res} = await axios.post("http://localhost:8000/auth/login", {email, password})
+            }}>
               Login
             </button>
             <span className="text-dark-blue-one">OR</span>
@@ -56,7 +69,11 @@ export default function Login() {
           </div>
 
           <div className="text-dark-blue-one flex justify-center">
-              Don't have an account ? <Link className="text-lg font-bold uppercase" to="/signup"> Sign up</Link>
+            Don't have an account ?{" "}
+            <Link className="text-lg font-bold uppercase" to="/signup">
+              {" "}
+              Sign up
+            </Link>
           </div>
         </div>
       </div>
