@@ -40,7 +40,7 @@ export default function Checkout() {
         <h1 className="uppercase text-dark-blue-one text-4xl lg:text-6xl">
           Checkout
         </h1>
-        <div className="text-36 lg:w-64 h-1.5 rounded-full bg-dark-orange" />
+        <div className="text-36 w-44 lg:w-64 h-1.5 rounded-full bg-dark-orange" />
       </div>
       <div className="flex flex-wrap">
         {tests.map((test) => {

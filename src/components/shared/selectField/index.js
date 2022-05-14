@@ -30,7 +30,7 @@ export default function CheckboxesTags({ fnc }) {
         )}
         style={{ width: 300 }}
         renderInput={(params) => (
-          <TextField {...params} label="Checkboxes" placeholder="Favorites" />
+          <TextField {...params} label="Your symptomes" placeholder="Favorites" />
         )}
       />
     </section>
