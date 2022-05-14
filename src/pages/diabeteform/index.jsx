@@ -26,6 +26,7 @@ export default function DiabeteForm(){
           console.log(body)
           try {
               const {data} = await axios.post("https://kokovagabond.herokuapp.com/predict_diabetes", body)
+              console.log("skandar")
               console.log(data)
           } catch (error) {
 
@@ -37,35 +38,35 @@ export default function DiabeteForm(){
                 <h2 className="text-3xl text-dark-blue-one my-2 mx-auto font-semibold">Diabete form</h2>
                 <div>
                     <label>Pregnancies</label>
-                    <input ref={regnanciesRef} type="number" className="mx-2 outline-none border-2 border-dark-blue-one rounded-lg w-24 md:w-72"/>
+                    <input value={0} ref={regnanciesRef} type="number" className="mx-2 outline-none border-2 border-dark-blue-one rounded-lg w-24 md:w-72"/>
                 </div>
                 <div>
                     <label>Glucose</label>
-                    <input ref={glucoseRef} type="number" className="mx-2 outline-none border-2 border-dark-blue-one rounded-lg w-24 md:w-72"/>
+                    <input value={0} ref={glucoseRef} type="number" className="mx-2 outline-none border-2 border-dark-blue-one rounded-lg w-24 md:w-72"/>
                 </div>
                 <div>
                     <label>Blood Pressure (mm Hg)</label>
-                    <input ref={bloodRef} type="number" className="mx-2 outline-none border-2 border-dark-blue-one rounded-lg w-24 md:w-72"/>
+                    <input ref={bloodRef} value={0} type="number" className="mx-2 outline-none border-2 border-dark-blue-one rounded-lg w-24 md:w-72"/>
                 </div>
                 <div>
                     <label>Skin Thickness (mm)</label>
-                    <input ref={skinThicknessRef} type="number" className="mx-2 outline-none border-2 border-dark-blue-one rounded-lg w-24 md:w-72"/>
+                    <input ref={skinThicknessRef} value={0} type="number" className="mx-2 outline-none border-2 border-dark-blue-one rounded-lg w-24 md:w-72"/>
                 </div>
                 <div>
                     <label>Insulin (mu U/ml)</label>
-                    <input ref={insulinRef} type="number" className="mx-2 outline-none border-2 border-dark-blue-one rounded-lg w-24 md:w-72"/>
+                    <input ref={insulinRef} value={0} type="number" className="mx-2 outline-none border-2 border-dark-blue-one rounded-lg w-24 md:w-72"/>
                 </div>
                 <div>
                     <label>BMI</label>
-                    <input ref={bmiRef} type="number" className="mx-2 outline-none border-2 border-dark-blue-one rounded-lg w-24 md:w-72"/>
+                    <input ref={bmiRef} value={0} type="number" className="mx-2 outline-none border-2 border-dark-blue-one rounded-lg w-24 md:w-72"/>
                 </div>
                 <div>
                     <label>Diabetes pedigree function</label>
-                    <input ref={diabetesPedigreeFunctionRef} type="number" className="mx-2 outline-none border-2 border-dark-blue-one rounded-lg w-20 md:w-72"/>
+                    <input ref={diabetesPedigreeFunctionRef} value={0} type="number" className="mx-2 outline-none border-2 border-dark-blue-one rounded-lg w-20 md:w-72"/>
                 </div>
                 <div>
                     <label>Age</label>
-                    <input ref={ageRef} type="number" className="mx-2 outline-none border-2 border-dark-blue-one rounded-lg w-24 md:w-72"/>
+                    <input ref={ageRef} type="number" value={0} className="mx-2 outline-none border-2 border-dark-blue-one rounded-lg w-24 md:w-72"/>
                 </div>
                 <button onClick={handleSubmit} className="px-8 py-2 bg-dark-blue-one mx-auto rounded-xl text-white text-lg">
                     Submit

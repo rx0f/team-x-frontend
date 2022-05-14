@@ -34,7 +34,7 @@ export default function AlertDialog() {
     try {
       console.log(body);
       const { data } = await axios.post(
-        "https://modelfastapi.herokuapp.com/predict_symptoms",
+        "https://diabetes-h.herokuapp.com/predict_symptoms",
         body
       );
       setLoading(false);
