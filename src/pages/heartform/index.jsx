@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> 375e9cbe196cb8309cda56742d12e918f248e934
 import { useRef } from "react";
 import PopupHeartResult from "../../components/heartFormResultPopUp";
 
