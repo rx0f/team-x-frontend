@@ -96,7 +96,7 @@ export default function PopupHeartResult({props}) {
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose}>Cnacel</Button>
+          <Button onClick={handleClose}>Cancel</Button>
           <Button onClick={handleCheckDoctor} autoFocus>
             check a doctor
           </Button>
