@@ -24,7 +24,7 @@ export default function Checkout() {
       img: "/assets/checkout/3.svg",
       title: "Diabet",
       details: "Check your diabet",
-      button: <Button content="Upload file" icon="/assets/checkout/4.svg" />
+      button: <Link to="/diabeteform"><Button content="Upload file" icon="/assets/checkout/4.svg" /></Link>
     },
     {
       id: 4,

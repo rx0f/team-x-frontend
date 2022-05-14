@@ -18,7 +18,7 @@ export default function Navbar() {
           <div className="flex items-center gap-x-2">
             <img
               className="rounded-full h-10"
-              src="https://scontent.falg2-2.fna.fbcdn.net/v/t1.6435-9/106904416_834570883950575_2444049961754063289_n.jpg?_nc_cat=105&ccb=1-6&_nc_sid=174925&_nc_eui2=AeFW8hpOv6JebeeWXDJz1DMfG6o0E_yHUOsbqjQT_IdQ62uikP860q0J_3xXljtCE0lgkjPzK4Hrki1cZdKlMXJR&_nc_ohc=KfLOroSSE2AAX_2vSc2&tn=_TZPD1ds9n9MCXVP&_nc_ht=scontent.falg2-2.fna&oh=00_AT821qzKUH5Cm8dioU7WIX1lJC6T6U1VxKg9VTKFoAeNXQ&oe=62A54B06"
+              src="https://i.pinimg.com/474x/76/4d/59/764d59d32f61f0f91dec8c442ab052c5.jpg"
               alt=""
             />
             <button
