@@ -13,12 +13,14 @@ export default function Doctors() {
         <div className="text-36 w-44 lg:w-64 h-1.5 rounded-full bg-dark-orange" />
       </div>
       <div className="flex flex-col justify-center lg:flex-row lg:justify-evenly">
-        <h3 className="text-2xl mx-auto lg:mx-0">Find doctors by speciality</h3>
-        <div className="flex items-center gap-x-4">
+        <h3 className="text-md lg:text-xl mx-auto lg:mx-0">
+          Find doctors by speciality
+        </h3>
+        <div className="flex items-center gap-x-4 mx-auto lg:mx-0 my-4">
           <select
             ref={specialityRef}
             name="speciality"
-            className="outline-none px-6 py-1 rounded-xl text-lg"
+            className="outline-none px-6 py-1 rounded-xl text-base lg:text-lg"
           >
             <option value="">All</option>
             <option value="627e169838530793a0c3e39f">General Doctor</option>
@@ -31,22 +33,40 @@ export default function Doctors() {
             onClick={async () => {
               const value = specialityRef.current.value;
               const { data: res } = await axios.get(
-                `http://localhost:8000/doctor/${
+                `https://team-x-backend.herokuapp.com/doctor/${
                   value === "" ? "" : "speciality/"
                 }${value}`
               );
               setDoctors(res.data);
             }}
-            className="px-6 py-1 bg-dark-blue-one rounded-xl text-white text-lg"
+            className="px-6 py-1 bg-dark-blue-one rounded-xl text-white text-base lg:text-lg"
           >
             Search
           </button>
         </div>
       </div>
-      <div className="">
-            {doctors.map(doctor => {
-                
-            })}
+      <div className="flex flex-wrap">
+        {doctors.length > 0 &&
+          doctors.map((doctor) => {
+            return (
+              <div
+                key={doctor._id}
+                className="bg-white rounded-xl p-4 mx-auto my-4 flex flex-col gap-y-4"
+              >
+                <img
+                  src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png"
+                  alt=""
+                  className="w-64 h-64 object-cover"
+                />
+                <div>
+                  <p>Name: {doctor.username}</p>
+                  <p>Email: {doctor.email}</p>
+                  <p>+213 {doctor.phoneNumber}</p>
+                  <p>Location: {doctor.location}</p>
+                </div>
+              </div>
+            );
+          })}
       </div>
     </div>
   );
