@@ -12,6 +12,10 @@ export default function SignupPatient() {
 
   return (
     <div className="lg:h-[90vh] flex flex-col lg:flex-row items-center justify-around">
+      <div className="w-[90%] md:w-[32rem] flex flex-col items-center my-8">
+        <img src="/assets/shared/logo.svg" alt="" />
+        <h2 className="text-dark-blue-one text-xl lg:text-3xl">You will feel well nurtured here.</h2>
+      </div>
       <div className="w-72 md:w-[32rem] lg:h-[32rem] rounded-xl drop-shadow-md bg-white flex flex-col gap-y-8 items-center p-4">
         <div className="flex justify-between lg:justify-evenly items-end w-full">
           <div className="flex flex-col gap-y-2">
@@ -103,8 +107,7 @@ export default function SignupPatient() {
 
           <div className="text-dark-blue-one flex justify-center">
             Already have an account ?{" "}
-            <Link className="text-lg font-bold uppercase" to="/signup">
-              {" "}
+            <Link className="text-lg font-bold uppercase" to="/login">
               Login
             </Link>
           </div>
