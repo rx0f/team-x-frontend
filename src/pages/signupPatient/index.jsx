@@ -93,13 +93,13 @@ export default function SignupPatient() {
             </button>
             <span className="text-dark-blue-one">OR</span>
             <div className="flex h-12 justify-center gap-x-4 text-4xl md:text-5xl text-dark-orange">
-              <a href="">
+              <a href="google.com">
                 <RiFacebookCircleFill />
               </a>
-              <a href="">
+              <a href="google.com">
                 <AiFillTwitterCircle />
               </a>
-              <a href="">
+              <a href="google.com">
                 <AiFillGooglePlusCircle />
               </a>
             </div>
