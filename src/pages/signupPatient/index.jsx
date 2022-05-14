@@ -86,20 +86,20 @@ export default function SignupPatient() {
               if (!password === validatePassword) {
                 alert("There's an error in the password")
               } else {
-                const {data: res} = await axios.post("http://localhost:8000/auth/register", {username: name, email, password})
+                await axios.post("http://localhost:8000/auth/register", {username: name, email, password})
               }
             }}>
               Register
             </button>
             <span className="text-dark-blue-one">OR</span>
             <div className="flex h-12 justify-center gap-x-4 text-4xl md:text-5xl text-dark-orange">
-              <a href="">
+              <a href="google.com">
                 <RiFacebookCircleFill />
               </a>
-              <a href="">
+              <a href="google.com">
                 <AiFillTwitterCircle />
               </a>
-              <a href="">
+              <a href="google.com">
                 <AiFillGooglePlusCircle />
               </a>
             </div>

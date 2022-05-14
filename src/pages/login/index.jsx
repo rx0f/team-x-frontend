@@ -53,19 +53,19 @@ export default function Login() {
 
           <div className="flex flex-col items-center gap-y-2">
             <button className="bg-dark-blue-one text-white text-xl py-1 w-full rounded-full" onClick={async () => {
-              const {data: res} = await axios.post("http://localhost:8000/auth/login", {email, password})
+              await axios.post("http://localhost:8000/auth/login", {email, password})
             }}>
               Login
             </button>
             <span className="text-dark-blue-one">OR</span>
             <div className="flex h-12 justify-center gap-x-4 text-4xl md:text-5xl text-dark-orange">
-              <a href="">
+              <a href="google.com">
                 <RiFacebookCircleFill />
               </a>
-              <a href="">
+              <a href="google.com">
                 <AiFillTwitterCircle />
               </a>
-              <a href="">
+              <a href="google.com">
                 <AiFillGooglePlusCircle />
               </a>
             </div>
