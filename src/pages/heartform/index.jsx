@@ -41,7 +41,6 @@ export default function HeartForm() {
             ref={ageRef}
             className="mx-2 outline-none border-2 border-dark-blue-one rounded-lg w-36 lg:w-72"
             type="number"
-            value={0}
           />
         </div>
         <div>
@@ -77,7 +76,6 @@ export default function HeartForm() {
             type="number"
             className="mx-2 outline-none border-2 border-dark-blue-one rounded-lg w-36 lg:w-72"
             required
-            value={0}
           />
         </div>
         <div>
@@ -87,7 +85,6 @@ export default function HeartForm() {
             type="number"
             className="mx-2 outline-none border-2 border-dark-blue-one rounded-lg w-36 lg:w-72"
             required
-            value={0}
           />
         </div>
         <div>
@@ -97,7 +94,6 @@ export default function HeartForm() {
             type="number"
             className="mx-2 outline-none border-2 border-dark-blue-one rounded-lg w-36 lg:w-72"
             required
-            value={0}
           />
         </div>
         <div>
@@ -117,7 +113,6 @@ export default function HeartForm() {
           <label>Max HR</label>
           <input
             ref={maxHrRef}
-            value={0}
             type="number"
             className="mx-2 outline-none border-2 border-dark-blue-one rounded-lg w-36 lg:w-72"
           />
@@ -137,7 +132,6 @@ export default function HeartForm() {
           <label>Oldpeak</label>
           <input
             ref={oldpeakRef}
-            value={0}
             type="number"
             className="mx-2 outline-none border-2 border-dark-blue-one rounded-lg w-36 lg:w-72"
           />

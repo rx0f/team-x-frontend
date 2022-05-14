@@ -88,10 +88,10 @@ export default function PopupHeartResult({props}) {
         <DialogContent>
           <DialogContentText id="alert-dialog-description" width = {270}>
               {
-                  (100-pourcentage)<=50 ?
-                      `Apparently, there is a chance of (${pourcentage}%) that you're getting sick.`
+                  (pourcentage)>=50 ?
+                      `There is a chance of (${100-pourcentage}%) that you're getting sick.`
                   : 
-                      `There is a high chance to face heart problems (${pourcentage}%),So we highly recommand you to check one of our doctors.`
+                      `There is a high chance to face heart problems (${100-pourcentage}%),So we highly recommand you to check one of our doctors.`
               }
           </DialogContentText>
         </DialogContent>
