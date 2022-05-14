@@ -86,7 +86,7 @@ export default function SignupPatient() {
               if (!password === validatePassword) {
                 alert("There's an error in the password")
               } else {
-                const {data: res} = await axios.post("http://localhost:8000/auth/register", {username: name, email, password})
+                await axios.post("http://localhost:8000/auth/register", {username: name, email, password})
               }
             }}>
               Register
