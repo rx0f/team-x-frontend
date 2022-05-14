@@ -31,8 +31,6 @@ export default function AlertDialog() {
     }
     try {
       console.log(body);
-
-      axios.post();
       const { data } = await axios.post(
         "https://modelfastapi.herokuapp.com/predict_symptoms",
         body
