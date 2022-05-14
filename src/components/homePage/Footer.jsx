@@ -12,16 +12,16 @@ export default function Footer(){
                 <div className="flex flex-col items-center gap-y-4">
                     <h3 className="text-3xl">Contact us</h3>
                     <div className="flex text-2xl gap-x-8 text-white">
-                        <a href="#">
+                        <a href="twitter.com">
                             <FaTwitter/>
                         </a>
-                        <a href="#">
+                        <a href="https://github.com">
                             <FiMail/>
                         </a>
-                        <a href="#">
+                        <a href="tel:+999 999 999">
                             <FaPhone/>
                         </a>
-                        <a href="#">
+                        <a href="https://github.com">
                             <FaGithub/>
                         </a>
                     </div> 
