@@ -7,6 +7,7 @@ import CircularProgress from "@mui/material/CircularProgress";
 import CheckboxesTags from "../selectField/index";
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export default function AlertDialog() {
   const [open, setOpen] = useState(false);
@@ -14,6 +15,7 @@ export default function AlertDialog() {
   const [preditionResult, setPresdictionResult] = useState(null);
   const [loading, setLoading] = useState(false);
 
+  
   const handleClickOpen = () => {
     setOpen(true);
     setPresdictionResult(null)
@@ -44,7 +46,11 @@ export default function AlertDialog() {
     }
   };
 
-  const handleredirectTodoctor = async () => {};
+  const navigate = useNavigate()
+
+  const handleredirectTodoctor = async () => {
+    navigate('/doctors')
+  };
   return (
     <div>
       <button

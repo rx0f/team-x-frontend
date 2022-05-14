@@ -6,10 +6,12 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import axios from 'axios';
+import { useNavigate } from "react-router-dom";
+import { CircularProgress } from '@mui/material';
 
 export default function PopupHeartResult({props}) {
   const [open, setOpen] = useState(false);
-
+  const [loading, setLoading] = useState(false)
   const {Age, Sex, ChestPainType, RestingBP, Cholesterol, FastingBS, RestingECG, MaxHR, ExerciseAngina, Oldpeak, ST_Slope} = props
   const handleClose = () => {
     setOpen(false);
@@ -44,7 +46,8 @@ export default function PopupHeartResult({props}) {
     body["ExerciseAngina"] = ExerciseAngina.current.value;
     body["Oldpeak"] = Oldpeak.current.value;
     body["ST_Slope"] = ST_Slope.current.value;
-    console.log(body);
+
+    setLoading(true)
     try {
       const { data } = await axios.post(
         "https://diabetes-h.herokuapp.com/predict_heart",
@@ -54,21 +57,24 @@ export default function PopupHeartResult({props}) {
       setOpen(true)
       const temp = data.pourcentage * 100
       setPourcentage(temp.toFixed(2))
+      setLoading(false)
     } catch (error) {
       //
+      setLoading(false)
     }
   };
 
+  const navigate = useNavigate()
+
   const handleCheckDoctor = async ()=> {
-
-
+    navigate('/doctors')
     setOpen(false)
   }
 
   return (
     <div>
         <button className="px-8 py-2 bg-dark-blue-one mx-auto rounded-xl text-white text-lg"onClick={handleSubmit}>
-          Submit
+          {loading ? <CircularProgress style={{ color: "white" }}/>: "Submit"}  
         </button>
       <Dialog
         open={open}
@@ -80,10 +86,10 @@ export default function PopupHeartResult({props}) {
           Predicition Result
         </DialogTitle>
         <DialogContent>
-          <DialogContentText id="alert-dialog-description">
+          <DialogContentText id="alert-dialog-description" width = {270}>
               {
                   (100-pourcentage)<=50 ?
-                      `Prediction ${pourcentage}%`
+                      `Apparently, there is a chance of (${pourcentage}%) that you're getting sick.`
                   : 
                       `There is a high chance to face heart problems (${pourcentage}%),So we highly recommand you to check one of our doctors.`
               }

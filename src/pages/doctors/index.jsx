@@ -1,9 +1,23 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
 
 export default function Doctors() {
   const specialityRef = useRef();
   const [doctors, setDoctors] = useState([]);
+
+  useEffect(() => {
+    const getDoctors = async()=>{
+      try {
+        const {data: res} = await axios.get("https://team-x-backend.herokuapp.com/doctor")
+        console.log(res.data)
+        setDoctors(res.data)
+      } catch (error) {
+        
+      }
+    }
+    getDoctors()
+  }, [])
+  
   return (
     <div>
       <div className="flex flex-col items-center my-12 gap-y-2 lg:gap-y-4 font-semibold">
