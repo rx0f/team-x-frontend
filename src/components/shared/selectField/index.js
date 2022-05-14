@@ -28,7 +28,7 @@ export default function CheckboxesTags({ fnc }) {
             {option}
           </li>
         )}
-        style={{ width: 300 }}
+        style={{ width: 280 }}
         renderInput={(params) => (
           <TextField {...params} label="Your symptomes" placeholder="Add a symptom" />
         )}
