@@ -1,5 +1,8 @@
 import React, { useRef, useState } from "react";
 import axios from "axios";
+import { FaPhone, FaUserAlt } from 'react-icons/fa'
+import { ImLocation } from 'react-icons/im'
+import { HiOutlineMail } from 'react-icons/hi'
 
 export default function Doctors() {
   const specialityRef = useRef();
@@ -45,7 +48,7 @@ export default function Doctors() {
           </button>
         </div>
       </div>
-      <div className="flex flex-wrap">
+      <div className="flex flex-wrap lg:px-8">
         {doctors.length > 0 &&
           doctors.map((doctor) => {
             return (
@@ -56,13 +59,13 @@ export default function Doctors() {
                 <img
                   src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png"
                   alt=""
-                  className="w-64 h-64 object-cover"
+                  className="w-64 h-64 object-cover rounded-xl"
                 />
-                <div>
-                  <p>Name: {doctor.username}</p>
-                  <p>Email: {doctor.email}</p>
-                  <p>+213 {doctor.phoneNumber}</p>
-                  <p>Location: {doctor.location}</p>
+                <div className="text-base lg:text-lg">
+                  <div className="flex items-center gap-x-2"><FaUserAlt/> {doctor.username}</div>
+                  <div className="flex items-center gap-x-2"><HiOutlineMail/> {doctor.email}</div>
+                  <div className="flex items-center gap-x-2"><FaPhone/> +213 {doctor.phoneNumber}</div>
+                  <div className="flex items-center gap-x-2"><ImLocation/> {doctor.location}</div>
                 </div>
               </div>
             );
