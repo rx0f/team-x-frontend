@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/shared/layout";
 import Checkout from "./pages/checkout";
+import HeartForm from "./pages/heartform";
 import Home from "./pages/home";
 import Login from "./pages/login";
 import SignupPatient from "./pages/signupPatient";
@@ -15,7 +16,7 @@ export default function App() {
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/login" element={<Login/>}/>
           <Route path="/signup-patient" element={<SignupPatient/>}/>
-          <Route path="/signup-patient" element={<SignupPatient/>}/>
+          <Route path="/heartform" element={<HeartForm/>}/>
         </Route>
       </Routes>
     </BrowserRouter>

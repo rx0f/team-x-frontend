@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "../../components/checkoutPage/Button"
 import AlertDialog from "../../components/shared/pop-up";
+import { Link } from "react-router-dom";
 
 export default function Checkout() {
   const tests = [
@@ -9,7 +10,7 @@ export default function Checkout() {
       img: "/assets/checkout/1.svg",
       title: "Blood Pressure",
       details: "Test your blood pressure",
-      button: <Button content="Upload file" icon="/assets/checkout/4.svg" />
+      button: <Link to="/heartform"><Button content="Upload file" icon="/assets/checkout/4.svg" /></Link>
     },
     {
       id: 2,
